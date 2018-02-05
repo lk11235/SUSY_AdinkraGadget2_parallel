@@ -563,7 +563,7 @@ print("# ********************************")
 print("     ")
 print("Generating V Dictionary")
 print("     ")
-
+"""
 V_dict = dict()
 with tqdm(total=len(adinkra_dict.items())) as pbar_adinkra:
     for index,adink in adinkra_dict.items():
@@ -619,13 +619,13 @@ with tqdm(total=626688) as pbar_lines:
     fulllist.append(tuple(matrlist))
     V_dict[adink] = tuple(fulllist)
 #print V_dict
-"""
+
 print("     ")
 print("# ********************************")
 print("     ")
 print("Generating V-tilde Dictionary")
 print("     ")
-
+"""
 Vtilde_dict = dict()
 with tqdm(total=len(adinkra_dict.items())) as pbar_adinkra:
     for index,adink in adinkra_dict.items():
@@ -652,6 +652,7 @@ for key, value in Vtilde_dict.items():
 
 f.close()
 """
+
 num_lines = sum(1 for line in open('Vtilde_export.txt'))
 inputfile = open("Vtilde_export.txt","r")
 
@@ -681,13 +682,6 @@ with tqdm(total=626688) as pbar_lines:
     fulllist.append(tuple(matrlist))
     Vtilde_dict[adink] = tuple(fulllist)
 #print Vtilde_dict
-"""
-
-print("     ")
-print("# ********************************")
-print("     ")
-print("Calculating Gadget")
-print("     ")
 
 pool = Pool(processes=300)
 while True:
